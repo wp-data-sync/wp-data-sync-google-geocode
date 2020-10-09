@@ -235,6 +235,23 @@ class GeoCode {
 	}
 
 	/**
+	 * Delete.
+	 *
+	 * @param $post_id int
+	 */
+
+	public static function delete( $post_id ) {
+
+		global $wpdb;
+
+		$wpdb->delete(
+			self::table_name(),
+			[ 'post_id'   => $post_id, ]
+		);
+
+	}
+
+	/**
 	 * Within radius weher statement.
 	 *
 	 * Use this weher statement to select posts within a radius of a latitude and longintude point.
